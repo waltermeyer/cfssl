@@ -12,6 +12,10 @@ ENV PATH /usr/local/go/bin:/root/go/bin:$PATH
 
 RUN cd $GOPATH && go get -u github.com/cloudflare/cfssl/cmd/...
 
+RUN mkdir /cfssl
+
+VOLUME ["/cfssl"]
+
 ENTRYPOINT ["/root/go/bin/cfssl"]
 CMD ["serve", "-address=0.0.0.0"]
 EXPOSE 8888
