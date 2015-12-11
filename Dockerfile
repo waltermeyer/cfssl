@@ -1,7 +1,7 @@
-FROM ubuntu:14.04
+FROM ubuntu:trusty
 MAINTAINER wgmeyer@gmail.com
 
-RUN apt-get update -y && apt-get install wget git -y && \
+RUN apt-get update -y && apt-get install gcc wget git -y && \
     wget https://storage.googleapis.com/golang/go1.4.2.linux-amd64.tar.gz && \
     tar -C /usr/local -xzvf go1.4.2.linux-amd64.tar.gz && \
     mkdir $HOME/go
